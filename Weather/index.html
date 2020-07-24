@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hioks Weather</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="app">
+        <div class="title">
+            <span>Hioks</span><span class="weath">&nbsp;Weather</span>
+        </div>
+        <div class="search">
+            <input type="" name="" v-model="city" @keyup.enter="searchWeather" placeholder="请输入城市名来查询天气">
+            <a href="javascript:;" class="search-btn" @click="searchWeather">搜 索</a>      
+            <ul class="recomme">
+                <li @click="changeWeather('北京')">北京</li>
+                <li @click="changeWeather('上海')">上海</li>
+                <li @click="changeWeather('深圳')">深圳</li>
+                <li @click="changeWeather('成都')">成都</li>
+            </ul>
+        </div>
+        <div class="weather-result">
+            <ul class="clearfix">
+                <li v-for="item in weatherList">
+                    <h3>{{ item.wea }}</h3>
+                    <span class="temperator">最低{{ item.tem2 }}℃ 最高{{ item.tem1 }}℃</span>
+                    <span class="date">{{ item.day }}</span>
+                </li>
+<!--                 <li>
+                    <h3>多云</h3>
+                    <span class="temperator">最低-17℃ 最高0℃</span>
+                    <span class="date">24日 星期五</span>
+                </li>
+                <li>
+                    <h3>多云</h3>
+                    <span class="temperator">最低-17℃ 最高0℃</span>
+                    <span class="date">24日 星期五</span>
+                </li>
+                <li>
+                    <h3>多云</h3>
+                    <span class="temperator">最低-17℃ 最高0℃</span>
+                    <span class="date">24日 星期五</span>
+                </li>
+                <li>
+                    <h3>多云</h3>
+                    <span class="temperator">最低-17℃ 最高0℃</span>
+                    <span class="date">24日 星期五</span>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+	<div class="band"></div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>

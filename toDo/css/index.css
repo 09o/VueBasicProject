@@ -1,0 +1,152 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #f3f3f3;
+}
+
+#note {
+	position: relative;
+	width: 460px;
+	margin: 50px auto 0;
+	text-align: center;
+	background: #fcfcfb;
+	padding: 20px 0 10px;
+	box-shadow: -50px 80px 30px #ccc;
+}
+
+.cornor {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0;
+	height: 0;
+	border: 40px solid orange;
+	border-top-color: #f3f3f3;
+	border-right-color: #f3f3f3;
+	/*box-shadow: -15px 15px 15px #ccc;*/
+}
+
+.note-title {
+	font-weight: normal;
+	font-size: 40px;
+	margin: 10px 0 0;
+	color: orange;
+}
+
+.note-wrapper {
+	width: 420px;
+	margin: 50px auto 10px;
+}
+
+.note-content {
+	box-sizing: border-box;
+	width: 100%;
+	background: #fff;
+	border-radius: 5px;
+	overflow: hidden;
+	/*border: 2px solid #f3f6f3;*/
+	border: 2px dashed #eee;
+}
+
+.write input {
+	box-sizing: border-box;
+	width: 100%;
+	height: 50px;
+	outline: none;
+	border: 0;
+	vertical-align: bottom;
+	font-size: 20px;
+	padding: 0 20px;
+}
+
+.item-list li {
+	position: relative;
+	box-sizing: border-box;
+	text-align: left;
+	height: 50px;
+	line-height: 50px;
+	font-size: 20px;
+	color: #8c8c8c;
+	padding: 0 10px;
+	border-top: 2px dashed #eee;
+}
+
+.item-list li .index {
+	font-size: 12px;
+	color: #888;
+	margin-right: 15px;
+}
+
+.item-list li a { 
+	display: none;
+	color: #efb3b2;
+	/*float: right;*/
+	position: absolute;
+	top: 0;
+	right: 15px;
+	text-decoration: none;
+}
+
+.item-list li:hover a {
+	display: block;
+}
+
+.tools {
+	width: 100%;
+	box-sizing: border-box;
+	height: 30px;
+	line-height: 30px;
+	font-size: 14px;
+	margin-top: 40px;
+	padding-left: 10px;
+	color: #fff;
+	background-color: #cccacb;
+}
+
+.tools #total {
+	float: left;
+}
+
+.tools #clear {
+	float: right;
+	display: block;
+	cursor: pointer;
+	padding: 0 10px;
+	border-left: 1px solid #fff;
+	background-color: #cc290e;
+}
+
+.page2 {
+	position: relative;
+	width: 450px;
+	height: 12px;
+	margin: 0 auto;
+	background: #eee; 
+	z-index: 99;
+}
+
+.page3 {
+	position: relative;
+	width: 440px;
+	height: 15px;
+	margin: 0 auto;
+	background: #e6e6e6; 
+	z-index: 99;
+}
+
+.band {
+	width: 200px;
+	height: 73px;
+	margin: 5px auto;
+	background: url(../img/band.png);
+
+}

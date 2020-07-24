@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hioks Music</title>
+	<link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div id="app">
+            <div class="head">
+                <h3>Hioks Music</h3>
+                <div class="search">
+                    <input type="text" name="" placeholder="请通过歌手名来搜索歌曲..." v-model="query" @keyup.enter="searchMusic">
+                    <img src="./imgs/search.png" class="search-btn" alt="">
+                </div>
+            </div>
+            <div class="contents">
+                <div class="music-list">
+                    <ul>
+                        <li v-for="(item,index) in musicList">
+                            <span class="playing" v-show="index===current">
+                                <img src="./imgs/playing.png" alt="">
+                            </span>
+                            <span class="song-title" :class="{currentPlay:index===current}"
+                                @dblclick="playMusic(item.id, index)">{{ item.name }} -
+                                {{ item.artists[0].name }}</span>
+                            <span class="play-mv" @click="playMv(item.mvid)" v-if="item.mvid!==0">
+                                <img src="./imgs/mv.png" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="play-interface">
+                    <div class="album-img" :class="{animation:isPlaying}">
+                        <div class="cd3">
+                            <div class="cd2">
+                                <div class="cd1">
+                                    <div class="cd0">
+                                        <img :src="picUrl" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <img :src="picUrl" alt=""> -->
+                    </div>
+                    <div class="playing-title">
+                        <h4>正在播放</h4>
+                        <h3>{{ nowPlay.songName }} — {{ nowPlay.singer }}</h3>
+                    </div>
+                </div>
+                <div class="comments">
+                    <h3>热门评论</h3>
+                    <ul class="comment-list">
+                        <li v-for="item in hotComments">
+                            <img :src="item.user.avatarUrl" alt="">
+                            <span class="username">{{ item.user.nickname }}</span>
+                            <span class="commentCon">{{ item.content }}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="control">
+                <audio :src="musicUrl" @play="play" @pause="pause" autoplay controls></audio>
+            </div>
+            <!--             <div class="video-con" v-show="isShow">
+                <video :src="mvUrl" autobuffer autoloop loop controls></video>
+            </div> -->
+        </div>
+        <div class="band"></div>
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="./js/index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hioks toDo</title>
+	<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <div id="note">
+        <div class="cornor"></div>
+        <h2 class="note-title">Hioks toDo</h2>            
+        <div class="note-wrapper">
+            <div class="note-content">
+                <div class="write">
+                    <input v-model="inputValue" @keyup.enter="add" type="text" name="" value="" placeholder="请输入任务">
+                </div>
+                <ul class="item-list">
+                    <!-- <li>
+                        <span class="index">1.</span>
+                        <span>吃饭</span>
+                        <a href="javascript:;">X</a>
+                    </li> -->
+                    <li v-for="(item, index) in list">
+                        <span class="index">{{ index+1 }}.</span>
+                        <span>{{ item }}</span>
+                        <a href="javascript:;" @click="remove(index)">x</a>
+
+                    </li>
+                </ul>
+            </div>
+            <div class="tools">
+                <span id="total">{{ list.length }} items left :)</span>
+                <span v-show="list.length!=0" id="clear" @click="clear">clear</span>
+            </div>
+        </div>
+    </div>
+    <div class="page-style">
+        <div class="page2"></div>
+        <div class="page3"></div>
+    </div>
+    <div class="band"></div>
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<script src="js/index.js"></script>
+</body>
+</html>
