@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+  <div id="app">
+    <div class="head-title">
+      <div class="band">
+        <img src="./imgs/cover.png" alt="" width="70px">
+        <span>乃木賞</span>
+        <div class="box"></div>
+      </div>
+    </div>
+    <div class="img-wrapper">
+      <div class="img-list">
+        <img :src="imgArr[index]" alt="">
+      </div>
+      <div class="arrow-left" @click="prev" v-show="index!=0">
+        <span></span>
+        <span class="down"></span>
+      </div>
+      <div class="arrow-right" @click="next" v-show="index<imgArr.length-1">
+        <span></span>
+        <span class="up"></span>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var app = new Vue({
+      el: "#app",
+      data: {
+        imgArr: [
+          "./imgs/kakki.jpg",
+          "./imgs/mayu.jpg",
+          "./imgs/ayame.jpg"
+        ],
+        index: 0
+      },
+      methods: {
+        prev: function() {
+          this.index--
+        },
+        next: function() {
+          this.index++
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
